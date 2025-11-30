@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telegram Upload Bot - TikTok Login</title>
+  <style>
+    body { font-family: Arial; padding: 40px; text-align: center; }
+    button {
+      padding: 12px 20px; font-size: 18px;
+      background: #000; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Telegram Upload Bot - TikTok Integration Demo</h1>
+<p>Demo login menggunakan TikTok OAuth untuk keperluan app review.</p>
+
+<button onclick="login()">Login with TikTok</button>
+
+<script>
+  function login() {
+    const clientKey = "aw6hydzka9tonr31"; // GANTI DI SINI
+    const redirectUri = "https://syahrezaa1.github.io/telegram-upload-bot-docs/callback.html";
+
+    const url =
+      `https://www.tiktok.com/v2/auth/authorize/` +
+      `?client_key=${clientKey}` +
+      `&scope=user.info.basic,video.upload` +
+      `&response_type=code` +
+      `&redirect_uri=${encodeURIComponent(redirectUri)}`;
+
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>
