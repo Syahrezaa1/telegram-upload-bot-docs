@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TikTok OAuth Callback</title>
+  <style>
+    body { font-family: Arial; padding: 40px; text-align: center; }
+    .box { border: 1px solid #ddd; padding: 20px; border-radius: 6px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<h2>TikTok OAuth Callback</h2>
+<div class="box">
+  <p>Authorization Code:</p>
+  <p id="code"></p>
+</div>
+
+<br><br>
+
+<a href="upload.html">
+  <button style="padding:10px 20px;font-size:16px;">Continue to Upload Page</button>
+</a>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  document.getElementById("code").innerText = urlParams.get("code") || "(none)";
+</script>
+
+</body>
+</html>
